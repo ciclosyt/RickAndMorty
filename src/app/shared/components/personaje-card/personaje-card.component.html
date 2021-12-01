@@ -1,0 +1,24 @@
+<article class="card">
+  <a [routerLink]="['/personajes-detalles', personaje.id]" class="card__link">
+    <figure>
+      <img rel="preload" as="image" width="300" height="300" [src]="personaje.image" [alt]="personaje.name" />
+    </figure>
+    <div class="card__details">
+        <figure class="card__favorite">
+            <img (click)="toggleFav()" rel="preload" as="image" width="30" height="30" src="../../../../assets/imgs/{{ getIcon() }}" [alt]="personaje.name" />
+          </figure>
+      <h3>{{ personaje.name }}</h3>
+      <ul class="card__list">
+        <li>
+          <label class="table__label">Estatus:</label> {{ personaje.status }}
+        </li>
+        <li>
+          <label class="table__label">Especie:</label> {{ personaje.species }}
+        </li>
+        <li>
+          <label class="table__label">Genero:</label> {{ personaje.gender }}
+        </li>
+      </ul>
+    </div>
+  </a>
+</article>
